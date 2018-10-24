@@ -1,9 +1,9 @@
 <script>
   export default {
-    name: 'accounts-create',
+    name: 'accounts-edit',
     data: function () {
       return {
-        sub_title: 'Criando Conta'
+        sub_title: 'Editando Conta'
       }
     },
     template: require('./form.html')

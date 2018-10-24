@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <div class="content-header">
-      <h1>Conta título <small>Detalhes</small></h1>
+      <h1>Conta título
+        <small>Detalhes</small>
+      </h1>
       <div class="grey-text">
         <small>
           <a href="#/">iFinance</a> >
@@ -37,9 +39,10 @@
     </div>
   </div>
 </template>
+
 <script>
   export default {
-    name:'accounts-view',
+    name: 'accounts-view',
     methods: {
       remove: function (id) {
         this.$router.push('/contas')

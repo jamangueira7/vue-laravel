@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <div class="content-header">
-      <h1>Contas bancárias <small>Gerenciamento de contas</small></h1>
+      <h1>Contas bancárias
+        <small>Gerenciamento de contas</small>
+      </h1>
       <div class="grey-text">
         <small>
           <a href="#/">iFinance</a> >
@@ -11,7 +13,7 @@
     </div>
 
     <div class="card col s12">
-
+      Contas: {{accounts}}
       <div class="card-content">
         <table class="highlight">
           <thead>
@@ -35,19 +37,28 @@
     </div>
   </div>
 </template>
+
 <script>
-export default {
-  name:'accounts',
-  methods: {
-    goTo: function (id) {
-      this.$router.push('/contas/' + id)
+  export default {
+    name: 'accounts',
+    methods: {
+      goTo: function (id) {
+        this.$router.push('/contas/' + id)
+      }
+    },
+    computed: {
+      accounts() {
+        return this.$store.state.account.accountList
+      }
+    },
+    created() {
+      this.$store.dispatch('getAccounts')
     }
   }
-}
 </script>
 
 <style>
-tbody tr {
-  cursor: pointer;
-}
+  tbody tr {
+    cursor: pointer;
+  }
 </style>

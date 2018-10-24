@@ -47,10 +47,10 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vuex-style-loader'
+        fallback: 'vue-style-loader'
       })
     } else {
-      return ['vuex-style-loader'].concat(loaders)
+      return ['vue-style-loader'].concat(loaders)
     }
   }
 
@@ -66,7 +66,7 @@ exports.cssLoaders = function (options) {
   }
 }
 
-// Generate loaders for standalone style files (outside of .vuex)
+// Generate loaders for standalone style files (outside of .vue)
 exports.styleLoaders = function (options) {
   const output = []
   const loaders = exports.cssLoaders(options)
