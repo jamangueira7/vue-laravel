@@ -1,7 +1,9 @@
 import account from './modules/account'
+import bank from './modules/banks'
 
 export default {
   modules: {
-    account: account
+    account: account,
+    bank: bank
   }
 }
